@@ -6,13 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="RUd-og-cv4">
-            <objects>
-                <hostingController id="NBu-mt-KyX" customClass="MainViewController" customModule="SlackNotifier_WatchKit_Extension"/>
-            </objects>
-            <point key="canvasLocation" x="124" y="152"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
