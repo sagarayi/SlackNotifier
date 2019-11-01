@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D4D27CF235ABDB80094E1CF /* SlackNotifier WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D4D27D5235ABDB80094E1CF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27D3235ABDB80094E1CF /* Interface.storyboard */; };
+		5D4D27D7235ABDBC0094E1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27D6235ABDBC0094E1CF /* Assets.xcassets */; };
+		5D4D27DE235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D4D27DD235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D4D27E3235ABDBC0094E1CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27E2235ABDBC0094E1CF /* ContentView.swift */; };
+		5D4D27E5235ABDBC0094E1CF /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27E4235ABDBC0094E1CF /* HostingController.swift */; };
+		5D4D27E7235ABDBC0094E1CF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27E6235ABDBC0094E1CF /* ExtensionDelegate.swift */; };
+		5D4D27E9235ABDBC0094E1CF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27E8235ABDBC0094E1CF /* NotificationController.swift */; };
+		5D4D27EB235ABDBC0094E1CF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27EA235ABDBC0094E1CF /* NotificationView.swift */; };
+		5D4D27ED235ABDBC0094E1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27EC235ABDBC0094E1CF /* Assets.xcassets */; };
+		5D4D27F0235ABDBC0094E1CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */; };
+		5DE43C46236C92C7007722B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE43C45236C92C7007722B8 /* MainViewController.swift */; };
+		5DE43C48236C9596007722B8 /* WatchWorkoutTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */; };
+		5DE43C4C236C9831007722B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE43C4B236C9831007722B8 /* HealthKit.framework */; };
+		5DE43C4E236CCA11007722B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE43C4D236CCA11007722B8 /* NetworkManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D4D27D0235ABDB80094E1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D4D27C4235ABDB80094E1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D4D27CD235ABDB80094E1CF;
+			remoteInfo = "SlackNotifier WatchKit App";
+		};
+		5D4D27DF235ABDBC0094E1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D4D27C4235ABDB80094E1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D4D27DC235ABDBC0094E1CF;
+			remoteInfo = "SlackNotifier WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D4D27F8235ABDBC0094E1CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D4D27DE235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D4D27FC235ABDBC0094E1CF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5D4D27CF235ABDB80094E1CF /* SlackNotifier WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5D4D27CA235ABDB80094E1CF /* SlackNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SlackNotifier WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4D27D4235ABDB80094E1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5D4D27D6235ABDBC0094E1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D4D27D8235ABDBC0094E1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D4D27DD235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SlackNotifier WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4D27E2235ABDBC0094E1CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D4D27E4235ABDBC0094E1CF /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		5D4D27E6235ABDBC0094E1CF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5D4D27E8235ABDBC0094E1CF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5D4D27EA235ABDBC0094E1CF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		5D4D27EC235ABDBC0094E1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D4D27F1235ABDBC0094E1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D4D27F2235ABDBC0094E1CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5DE43C45236C92C7007722B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchWorkoutTracking.swift; sourceTree = "<group>"; };
+		5DE43C49236C9831007722B8 /* SlackNotifier WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlackNotifier WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		5DE43C4B236C9831007722B8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		5DE43C4D236CCA11007722B8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D4D27DA235ABDBC0094E1CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DE43C4C236C9831007722B8 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D4D27C3235ABDB80094E1CF = {
+			isa = PBXGroup;
+			children = (
+				5D4D27D2235ABDB80094E1CF /* SlackNotifier WatchKit App */,
+				5D4D27E1235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */,
+				5D4D27CB235ABDB80094E1CF /* Products */,
+				5DE43C4A236C9831007722B8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5D4D27CB235ABDB80094E1CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D4D27CA235ABDB80094E1CF /* SlackNotifier.app */,
+				5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */,
+				5D4D27DD235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D4D27D2235ABDB80094E1CF /* SlackNotifier WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5D4D27D3235ABDB80094E1CF /* Interface.storyboard */,
+				5D4D27D6235ABDBC0094E1CF /* Assets.xcassets */,
+				5D4D27D8235ABDBC0094E1CF /* Info.plist */,
+			);
+			path = "SlackNotifier WatchKit App";
+			sourceTree = "<group>";
+		};
+		5D4D27E1235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5DE43C49236C9831007722B8 /* SlackNotifier WatchKit Extension.entitlements */,
+				5D4D27E2235ABDBC0094E1CF /* ContentView.swift */,
+				5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */,
+				5D4D27E4235ABDBC0094E1CF /* HostingController.swift */,
+				5D4D27E6235ABDBC0094E1CF /* ExtensionDelegate.swift */,
+				5D4D27E8235ABDBC0094E1CF /* NotificationController.swift */,
+				5D4D27EA235ABDBC0094E1CF /* NotificationView.swift */,
+				5D4D27EC235ABDBC0094E1CF /* Assets.xcassets */,
+				5D4D27F1235ABDBC0094E1CF /* Info.plist */,
+				5D4D27F2235ABDBC0094E1CF /* PushNotificationPayload.apns */,
+				5DE43C45236C92C7007722B8 /* MainViewController.swift */,
+				5DE43C4D236CCA11007722B8 /* NetworkManager.swift */,
+				5D4D27EE235ABDBC0094E1CF /* Preview Content */,
+			);
+			path = "SlackNotifier WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5D4D27EE235ABDBC0094E1CF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DE43C4A236C9831007722B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DE43C4B236C9831007722B8 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D4D27C9235ABDB80094E1CF /* SlackNotifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D4D27FD235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier" */;
+			buildPhases = (
+				5D4D27C8235ABDB80094E1CF /* Resources */,
+				5D4D27FC235ABDBC0094E1CF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D4D27D1235ABDB80094E1CF /* PBXTargetDependency */,
+			);
+			name = SlackNotifier;
+			productName = SlackNotifier;
+			productReference = 5D4D27CA235ABDB80094E1CF /* SlackNotifier.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		5D4D27CD235ABDB80094E1CF /* SlackNotifier WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D4D27F9235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier WatchKit App" */;
+			buildPhases = (
+				5D4D27CC235ABDB80094E1CF /* Resources */,
+				5D4D27F8235ABDBC0094E1CF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D4D27E0235ABDBC0094E1CF /* PBXTargetDependency */,
+			);
+			name = "SlackNotifier WatchKit App";
+			productName = "SlackNotifier WatchKit App";
+			productReference = 5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5D4D27DC235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D4D27F5235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier WatchKit Extension" */;
+			buildPhases = (
+				5D4D27D9235ABDBC0094E1CF /* Sources */,
+				5D4D27DA235ABDBC0094E1CF /* Frameworks */,
+				5D4D27DB235ABDBC0094E1CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SlackNotifier WatchKit Extension";
+			productName = "SlackNotifier WatchKit Extension";
+			productReference = 5D4D27DD235ABDBC0094E1CF /* SlackNotifier WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D4D27C4235ABDB80094E1CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Northeastern;
+				TargetAttributes = {
+					5D4D27C9235ABDB80094E1CF = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5D4D27CD235ABDB80094E1CF = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					5D4D27DC235ABDBC0094E1CF = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 5D4D27C7235ABDB80094E1CF /* Build configuration list for PBXProject "SlackNotifier" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5D4D27C3235ABDB80094E1CF;
+			productRefGroup = 5D4D27CB235ABDB80094E1CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D4D27C9235ABDB80094E1CF /* SlackNotifier */,
+				5D4D27CD235ABDB80094E1CF /* SlackNotifier WatchKit App */,
+				5D4D27DC235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D4D27C8235ABDB80094E1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D4D27CC235ABDB80094E1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4D27D7235ABDBC0094E1CF /* Assets.xcassets in Resources */,
+				5D4D27D5235ABDB80094E1CF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D4D27DB235ABDBC0094E1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4D27F0235ABDBC0094E1CF /* Preview Assets.xcassets in Resources */,
+				5D4D27ED235ABDBC0094E1CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D4D27D9235ABDBC0094E1CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4D27E5235ABDBC0094E1CF /* HostingController.swift in Sources */,
+				5D4D27E3235ABDBC0094E1CF /* ContentView.swift in Sources */,
+				5D4D27E9235ABDBC0094E1CF /* NotificationController.swift in Sources */,
+				5DE43C46236C92C7007722B8 /* MainViewController.swift in Sources */,
+				5DE43C4E236CCA11007722B8 /* NetworkManager.swift in Sources */,
+				5D4D27E7235ABDBC0094E1CF /* ExtensionDelegate.swift in Sources */,
+				5DE43C48236C9596007722B8 /* WatchWorkoutTracking.swift in Sources */,
+				5D4D27EB235ABDBC0094E1CF /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D4D27D1235ABDB80094E1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D4D27CD235ABDB80094E1CF /* SlackNotifier WatchKit App */;
+			targetProxy = 5D4D27D0235ABDB80094E1CF /* PBXContainerItemProxy */;
+		};
+		5D4D27E0235ABDBC0094E1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D4D27DC235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */;
+			targetProxy = 5D4D27DF235ABDBC0094E1CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5D4D27D3235ABDB80094E1CF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D4D27D4235ABDB80094E1CF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D4D27F3235ABDBC0094E1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D4D27F4235ABDBC0094E1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D4D27F6235ABDBC0094E1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SlackNotifier WatchKit Extension/SlackNotifier WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackNotifier WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = L8JSCA8WK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SlackNotifier WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		5D4D27F7235ABDBC0094E1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SlackNotifier WatchKit Extension/SlackNotifier WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackNotifier WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = L8JSCA8WK4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "SlackNotifier WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		5D4D27FA235ABDBC0094E1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SlackNotifier_WatchKit_Extension;
+				INFOPLIST_FILE = "SlackNotifier WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		5D4D27FB235ABDBC0094E1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = SlackNotifier_WatchKit_Extension;
+				INFOPLIST_FILE = "SlackNotifier WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		5D4D27FE235ABDBC0094E1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8JSCA8WK4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D4D27FF235ABDBC0094E1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8JSCA8WK4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.northeastern.SlackNotifier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D4D27C7235ABDB80094E1CF /* Build configuration list for PBXProject "SlackNotifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D4D27F3235ABDBC0094E1CF /* Debug */,
+				5D4D27F4235ABDBC0094E1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D4D27F5235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D4D27F6235ABDBC0094E1CF /* Debug */,
+				5D4D27F7235ABDBC0094E1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D4D27F9235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D4D27FA235ABDBC0094E1CF /* Debug */,
+				5D4D27FB235ABDBC0094E1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D4D27FD235ABDBC0094E1CF /* Build configuration list for PBXNativeTarget "SlackNotifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D4D27FE235ABDBC0094E1CF /* Debug */,
+				5D4D27FF235ABDBC0094E1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D4D27C4235ABDB80094E1CF /* Project object */;
+}
