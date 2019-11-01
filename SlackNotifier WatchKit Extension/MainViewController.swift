@@ -19,10 +19,6 @@ class MainViewController: WKInterfaceController  {
     
     @IBOutlet weak var stepsCounterLabel: WKInterfaceLabel!
     
-    var counter:Int = 0
-    
-    
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -31,9 +27,6 @@ class MainViewController: WKInterfaceController  {
         WorkoutTracking.authorizeHealthKit()
         WorkoutTracking.shared.startWorkOut()
         WorkoutTracking.shared.delegate = self
-        
-//        WatchKitConnection.shared.delegate = self
-//        WatchKitConnection.shared.startSession()
     }
     
     override func willActivate() {
@@ -49,17 +42,6 @@ class MainViewController: WKInterfaceController  {
         print("DID DEACTIVE")
     }
     
-    
-    //    extension MainController {
-    //        @IBAction func startWorkout() {
-    //            WorkoutTracking.shared.startWorkOut()
-    //        }
-    //
-    //        @IBAction func stopWorkout() {
-    //            WorkoutTracking.shared.stopWorkOut()
-    //        }
-    //    }
-    
 }
 
 extension MainViewController: WorkoutTrackingDelegate {
@@ -71,19 +53,6 @@ extension MainViewController: WorkoutTrackingDelegate {
     }
     
     func didReceiveHealthKitHeartRate(_ heartRate: Double) {
-        counter =  counter + 1
-        heartRateCountLabel.setText("\(counter) BPM")
-        //            WatchKitConnection.shared.sendMessage(message: ["heartRate":
-        //                "\(heartRate)" as AnyObject])
+        heartRateCountLabel.setText("\(heartRate) BPM")
     }
-    
-    //        func didReceiveHealthKitStepCounts(_ stepCounts: Double) {
-    //            stepCountsLabel.setText("\(stepCounts) STEPS")
-    //        }
 }
-
-//extension MainViewController: WatchKitConnectionDelegate {
-//    func didReceiveUserName(_ userName: String) {
-//        userNameLabel.setText(userName)
-//    }
-//}
