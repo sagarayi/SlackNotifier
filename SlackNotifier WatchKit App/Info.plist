@@ -27,5 +27,11 @@
 	</array>
 	<key>WKWatchKitApp</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>For testing asdasasd asd as da sdqasdsd a sd asd.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Same hereasdasd asd as d asd as d asd a sda.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Exactly asdasd  asda sd asd as da sd asd asd.</string>
 </dict>
 </plist>

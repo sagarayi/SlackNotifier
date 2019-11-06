@@ -8,9 +8,11 @@
 
 import WatchKit
 import HealthKit
+import CoreLocation
 
 class MainViewController: WKInterfaceController  {
     
+
     @IBOutlet weak var hearRateLabel: WKInterfaceLabel!
     
     @IBOutlet weak var heartRateCountLabel: WKInterfaceLabel!
@@ -18,6 +20,11 @@ class MainViewController: WKInterfaceController  {
     @IBOutlet weak var stepsLabel: WKInterfaceLabel!
     
     @IBOutlet weak var stepsCounterLabel: WKInterfaceLabel!
+    
+    var currentHeartBeat : Double = 0
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    var mapLocation: CLLocationCoordinate2D?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -27,6 +34,11 @@ class MainViewController: WKInterfaceController  {
         WorkoutTracking.authorizeHealthKit()
         WorkoutTracking.shared.startWorkOut()
         WorkoutTracking.shared.delegate = self
+        
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestLocation()
     }
     
     override func willActivate() {
@@ -42,6 +54,9 @@ class MainViewController: WKInterfaceController  {
         print("DID DEACTIVE")
     }
     
+    @IBAction func dropButton() {
+        currentHeartBeat = currentHeartBeat + -30
+    }
 }
 
 extension MainViewController: WorkoutTrackingDelegate {
@@ -53,6 +68,20 @@ extension MainViewController: WorkoutTrackingDelegate {
     }
     
     func didReceiveHealthKitHeartRate(_ heartRate: Double) {
-        heartRateCountLabel.setText("\(heartRate) BPM")
+        heartRateCountLabel.setText("\(heartRate + currentHeartBeat) BPM")
+    }
+}
+
+extension MainViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            
+        let currentLocation = locations[0]
+        let lat = currentLocation.coordinate.latitude
+        let long = currentLocation.coordinate.longitude
+        print("Lat is \(lat) , Long is \(long)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }

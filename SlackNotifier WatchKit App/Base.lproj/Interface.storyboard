@@ -39,6 +39,11 @@
                         <label alignment="left" text="0" textAlignment="center" id="sB0-Br-Sv1"/>
                         <label alignment="left" text="Steps Count" id="NOG-RW-zG4"/>
                         <label alignment="left" text="0" id="I0d-ak-1Ot"/>
+                        <button width="1" alignment="left" title="Drop" id="RQK-Ns-W5X">
+                            <connections>
+                                <action selector="dropButton" destination="JzM-VK-n93" id="1OM-Jr-Bpv"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="hearRateLabel" destination="VBp-6F-4kD" id="GsN-5Y-6gV"/>
