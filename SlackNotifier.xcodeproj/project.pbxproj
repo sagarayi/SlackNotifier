@@ -18,6 +18,7 @@
 		5D4D27EB235ABDBC0094E1CF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D27EA235ABDBC0094E1CF /* NotificationView.swift */; };
 		5D4D27ED235ABDBC0094E1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27EC235ABDBC0094E1CF /* Assets.xcassets */; };
 		5D4D27F0235ABDBC0094E1CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */; };
+		5DCFD06F23776F5D00E13C81 /* JSONFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFD06E23776F5D00E13C81 /* JSONFields.swift */; };
 		5DE43C46236C92C7007722B8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE43C45236C92C7007722B8 /* MainViewController.swift */; };
 		5DE43C48236C9596007722B8 /* WatchWorkoutTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */; };
 		5DE43C4C236C9831007722B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE43C4B236C9831007722B8 /* HealthKit.framework */; };
@@ -82,6 +83,7 @@
 		5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D4D27F1235ABDBC0094E1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D4D27F2235ABDBC0094E1CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5DCFD06E23776F5D00E13C81 /* JSONFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFields.swift; sourceTree = "<group>"; };
 		5DE43C45236C92C7007722B8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchWorkoutTracking.swift; sourceTree = "<group>"; };
 		5DE43C49236C9831007722B8 /* SlackNotifier WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SlackNotifier WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		5D4D27E1235ABDBC0094E1CF /* SlackNotifier WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5DCFD06D23776F2F00E13C81 /* Model Objects */,
 				5DE43C49236C9831007722B8 /* SlackNotifier WatchKit Extension.entitlements */,
 				5D4D27E2235ABDBC0094E1CF /* ContentView.swift */,
 				5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */,
@@ -157,6 +160,14 @@
 				5D4D27EF235ABDBC0094E1CF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DCFD06D23776F2F00E13C81 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFD06E23776F5D00E13C81 /* JSONFields.swift */,
+			);
+			path = "Model Objects";
 			sourceTree = "<group>";
 		};
 		5DE43C4A236C9831007722B8 /* Frameworks */ = {
@@ -299,6 +310,7 @@
 				5D4D27E3235ABDBC0094E1CF /* ContentView.swift in Sources */,
 				5D4D27E9235ABDBC0094E1CF /* NotificationController.swift in Sources */,
 				5DE43C46236C92C7007722B8 /* MainViewController.swift in Sources */,
+				5DCFD06F23776F5D00E13C81 /* JSONFields.swift in Sources */,
 				5DE43C4E236CCA11007722B8 /* NetworkManager.swift in Sources */,
 				5D4D27E7235ABDBC0094E1CF /* ExtensionDelegate.swift in Sources */,
 				5DE43C48236C9596007722B8 /* WatchWorkoutTracking.swift in Sources */,

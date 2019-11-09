@@ -12,12 +12,13 @@ class NetworkManager: NSObject {
 
     let serverURL:URL = URL.init(string: "https://google.com")!
     
-    func sendHeartRateData(heartRate:Double){
+    func sendPersonData(personData: Data){
         var request = URLRequest.init(url: serverURL)
         request.httpMethod = "POST"
+        request.httpBody = personData
         
         let requestTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            //do something when you get a response
+            print(response.debugDescription)
         }
         
         requestTask.resume()

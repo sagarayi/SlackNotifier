@@ -12,7 +12,7 @@ import CoreLocation
 
 class MainViewController: WKInterfaceController  {
     
-
+    
     @IBOutlet weak var hearRateLabel: WKInterfaceLabel!
     
     @IBOutlet weak var heartRateCountLabel: WKInterfaceLabel!
@@ -20,6 +20,13 @@ class MainViewController: WKInterfaceController  {
     @IBOutlet weak var stepsLabel: WKInterfaceLabel!
     
     @IBOutlet weak var stepsCounterLabel: WKInterfaceLabel!
+    
+    var currentHeartRate: Double = 0
+    var currentStepCount: Double = 0
+    var lat : Double = 0
+    var longitude : Double = 0
+    var isMoving: Bool = false
+    
     
     var currentHeartBeat : Double = 0
     
@@ -55,7 +62,8 @@ class MainViewController: WKInterfaceController  {
     }
     
     @IBAction func dropButton() {
-        currentHeartBeat = currentHeartBeat + -30
+//        currentHeartBeat = currentHeartBeat + -30
+        buildDataAndSendIt()
     }
 }
 
@@ -63,25 +71,61 @@ extension MainViewController: WorkoutTrackingDelegate {
     func didReceiveHealthKitStepCounts(_ stepCounts: Double) {
         if (stepCounts > 0){
             stepsCounterLabel.setText("\(stepCounts) steps")
-            print("Started moving")
+            currentStepCount = stepCounts
+            isMoving = true
         }
     }
     
     func didReceiveHealthKitHeartRate(_ heartRate: Double) {
+        currentHeartRate = heartRate
         heartRateCountLabel.setText("\(heartRate + currentHeartBeat) BPM")
     }
 }
 
 extension MainViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            
+        
         let currentLocation = locations[0]
-        let lat = currentLocation.coordinate.latitude
-        let long = currentLocation.coordinate.longitude
-        print("Lat is \(lat) , Long is \(long)")
+        lat = currentLocation.coordinate.latitude
+        longitude = currentLocation.coordinate.longitude
+        print("Lat is \(lat) , Long is \(longitude)")
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+}
+
+extension MainViewController{
+    private func buildDataAndSendIt(){
+        let personID = "00000000000"
+        let currentTimeStamp = getCurrentTimeStampInISOFormat()
+        let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
+        let jsonValues = JsonFields.PersonJSONData(id: personID,
+                                                   timeStamp: currentTimeStamp,
+                                                   heartRate: currentHeartRate,
+                                                   steps: currentStepCount,
+                                                   isMoving: isMoving,
+                                                   location: locationData)
+        let encoder = JSONEncoder()
+        do{
+            let data = try encoder.encode(jsonValues)
+            let networkManager = NetworkManager()
+            networkManager.sendPersonData(personData: data)
+        }
+        catch{
+            print("Error encoding values to JSON")
+        }
+        
+        
+    }
+    
+    private func getCurrentTimeStampInISOFormat()-> String{
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter.string(from: date)
     }
 }
