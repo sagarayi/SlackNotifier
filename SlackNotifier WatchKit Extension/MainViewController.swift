@@ -2,8 +2,8 @@
 //  MainViewController.swift
 //  SlackNotifier WatchKit Extension
 //
-//  Created by Sagar Ayi on 11/1/19.
-//  Copyright © 2019 Northeastern. All rights reserved.
+//  Created by Rajath Kashyap on 11/1/19.
+//  Copyright © 2019   . All rights reserved.
 //
 
 import WatchKit
@@ -11,7 +11,6 @@ import HealthKit
 import CoreLocation
 
 class MainViewController: WKInterfaceController  {
-    
     
     @IBOutlet weak var hearRateLabel: WKInterfaceLabel!
     
@@ -41,6 +40,9 @@ class MainViewController: WKInterfaceController  {
         WorkoutTracking.authorizeHealthKit()
         WorkoutTracking.shared.startWorkOut()
         WorkoutTracking.shared.delegate = self
+        
+//        var store = HKHealthStore.init()
+        
         
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -98,7 +100,11 @@ extension MainViewController: CLLocationManagerDelegate{
 
 extension MainViewController{
     private func buildDataAndSendIt(){
-        let personID = "00000000000"
+        var mapper = ActivityMapper()
+//        mapper.makeCode(string: <#T##String#>)
+        var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
+        print("he is \(type.rawValue)")
+        let personID = 00000000000
         let currentTimeStamp = getCurrentTimeStampInISOFormat()
         let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
         let jsonValues = JsonFields.PersonJSONData(id: personID,
@@ -106,6 +112,7 @@ extension MainViewController{
                                                    heartRate: currentHeartRate,
                                                    steps: currentStepCount,
                                                    isMoving: isMoving,
+//                                                   activityType: type.
                                                    location: locationData)
         let encoder = JSONEncoder()
         do{

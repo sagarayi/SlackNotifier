@@ -55,5 +55,16 @@
             </objects>
             <point key="canvasLocation" x="-114" y="33"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="DJy-NY-l1M">
+            <objects>
+                <controller id="NWs-wZ-pt9">
+                    <items>
+                        <label alignment="left" text="Labelbjbjb" id="zMz-Ta-th1"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="358" y="-51"/>
+        </scene>
     </scenes>
 </document>

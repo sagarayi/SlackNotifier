@@ -2,8 +2,8 @@
 //  NetworkManager.swift
 //  SlackNotifier WatchKit Extension
 //
-//  Created by Sagar Ayi on 11/1/19.
-//  Copyright © 2019 Northeastern. All rights reserved.
+//  Created by Rajath Kashyap on 11/1/19.
+//  Copyright © 2019   . All rights reserved.
 //
 
 import WatchKit

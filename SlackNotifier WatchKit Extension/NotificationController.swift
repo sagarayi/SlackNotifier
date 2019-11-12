@@ -2,8 +2,8 @@
 //  NotificationController.swift
 //  SlackNotifier WatchKit Extension
 //
-//  Created by Sagar Ayi on 10/18/19.
-//  Copyright © 2019 Northeastern. All rights reserved.
+//  Created by Rajath Kashyap on 10/18/19.
+//  Copyright © 2019   . All rights reserved.
 //
 
 import WatchKit
