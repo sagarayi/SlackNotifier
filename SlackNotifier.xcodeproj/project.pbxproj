@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D2FF2BF238DC90B009B9B1A /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2FF2BE238DC90B009B9B1A /* WebSocketManager.swift */; };
 		5D4D27CF235ABDB80094E1CF /* SlackNotifier WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5D4D27D5235ABDB80094E1CF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27D3235ABDB80094E1CF /* Interface.storyboard */; };
 		5D4D27D7235ABDBC0094E1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D27D6235ABDBC0094E1CF /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D2FF2BE238DC90B009B9B1A /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
 		5D4D27CA235ABDB80094E1CF /* SlackNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4D27CE235ABDB80094E1CF /* SlackNotifier WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SlackNotifier WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4D27D4235ABDB80094E1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				5DCFD06D23776F2F00E13C81 /* Model Objects */,
 				5DE43C49236C9831007722B8 /* SlackNotifier WatchKit Extension.entitlements */,
 				5D4D27E2235ABDBC0094E1CF /* ContentView.swift */,
+				5D2FF2BE238DC90B009B9B1A /* WebSocketManager.swift */,
 				5DCFD0702377786D00E13C81 /* ActivityMapper.swift */,
 				5DE43C47236C9596007722B8 /* WatchWorkoutTracking.swift */,
 				5D4D27E4235ABDBC0094E1CF /* HostingController.swift */,
@@ -317,6 +320,7 @@
 				5DE43C4E236CCA11007722B8 /* NetworkManager.swift in Sources */,
 				5D4D27E7235ABDBC0094E1CF /* ExtensionDelegate.swift in Sources */,
 				5DCFD0712377786D00E13C81 /* ActivityMapper.swift in Sources */,
+				5D2FF2BF238DC90B009B9B1A /* WebSocketManager.swift in Sources */,
 				5DE43C48236C9596007722B8 /* WatchWorkoutTracking.swift in Sources */,
 				5D4D27EB235ABDBC0094E1CF /* NotificationView.swift in Sources */,
 			);

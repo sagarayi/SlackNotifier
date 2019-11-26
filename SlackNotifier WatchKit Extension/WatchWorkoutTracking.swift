@@ -2,8 +2,8 @@
 //  WatchWorkoutTracking.swift
 //  ElecDemo WatchKit Extension
 //
-//  Created by NhatHM on 8/12/19.
-//  Copyright © 2019 GST.PID. All rights reserved.
+//  Created by Rajath on 8/12/19.
+//  Copyright © 2019.
 //
 
 import Foundation

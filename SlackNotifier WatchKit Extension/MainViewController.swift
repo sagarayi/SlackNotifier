@@ -32,22 +32,32 @@ class MainViewController: WKInterfaceController  {
     var locationManager: CLLocationManager = CLLocationManager()
     var mapLocation: CLLocationCoordinate2D?
     
+    var webSocketManager:WebSocketManager!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+//         Configure interface objects here.
         print("AWAKE")
         WorkoutTracking.authorizeHealthKit()
         WorkoutTracking.shared.startWorkOut()
         WorkoutTracking.shared.delegate = self
-        
+
 //        var store = HKHealthStore.init()
-        
-        
+
+
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestLocation()
+        
+        
+        webSocketManager = WebSocketManager(url: URL(string: "wss://echo.websocket.org/")!)
+        webSocketManager.delegate = self
+        
+        webSocketManager.connect()
+        
+        webSocketManager.send(text: "test")
     }
     
     override func willActivate() {
@@ -100,8 +110,6 @@ extension MainViewController: CLLocationManagerDelegate{
 
 extension MainViewController{
     private func buildDataAndSendIt(){
-        var mapper = ActivityMapper()
-//        mapper.makeCode(string: <#T##String#>)
         var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
         print("he is \(type.rawValue)")
         let personID = 00000000000
@@ -112,7 +120,6 @@ extension MainViewController{
                                                    heartRate: currentHeartRate,
                                                    steps: currentStepCount,
                                                    isMoving: isMoving,
-//                                                   activityType: type.
                                                    location: locationData)
         let encoder = JSONEncoder()
         do{
@@ -135,4 +142,28 @@ extension MainViewController{
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter.string(from: date)
     }
+}
+
+extension MainViewController: WebSocketConnectionDelegate{
+    func onConnected(connection: WebSocketConnection) {
+        print("Connected")
+    }
+    
+    func onDisconnected(connection: WebSocketConnection, error: Error?) {
+        print("Disconnected")
+    }
+    
+    func onError(connection: WebSocketConnection, error: Error) {
+        print("Connection error")
+    }
+    
+    func onMessage(connection: WebSocketConnection, text: String) {
+        print("Got message")
+    }
+    
+    func onMessage(connection: WebSocketConnection, data: Data) {
+        print("Got Data")
+    }
+    
+    
 }
