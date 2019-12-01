@@ -28,6 +28,7 @@ class MainViewController: WKInterfaceController  {
     
     
     var currentHeartBeat : Double = 0
+    var isDropped = false
     
     var locationManager: CLLocationManager = CLLocationManager()
     var mapLocation: CLLocationCoordinate2D?
@@ -51,13 +52,20 @@ class MainViewController: WKInterfaceController  {
         locationManager.delegate = self
         locationManager.requestLocation()
         
+        let timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.buildDataAndSendIt), userInfo: nil, repeats: true)
+
         
-        webSocketManager = WebSocketManager(url: URL(string: "wss://echo.websocket.org/")!)
-        webSocketManager.delegate = self
+//        let timer = Timer(timeInterval: 0.1, repeats: true) { _ in  self.buildDataAndSendIt()}
         
-        webSocketManager.connect()
         
-        webSocketManager.send(text: "test")
+//        webSocketManager = WebSocketManager(url: URL(string:
+////            "wss://echo.websocket.org/")!)
+//            "ws://13.59.88.20:8090/java-websocket-0.0.1-SNAPSHOT/health/akshay")!)
+//        webSocketManager.delegate = self
+//
+//        webSocketManager.connect()
+        
+//        webSocketManager.send(text: "test")
     }
     
     override func willActivate() {
@@ -74,8 +82,18 @@ class MainViewController: WKInterfaceController  {
     }
     
     @IBAction func dropButton() {
-//        currentHeartBeat = currentHeartBeat + -30
-        buildDataAndSendIt()
+        if (isDropped){
+            if (currentHeartRate+currentHeartBeat < 70){
+            currentHeartBeat = 0
+                isDropped = false
+            }
+        }
+        else {
+            currentHeartBeat =  -30
+            isDropped = true
+        }
+//        currentHeartBeat = currentHeartBeat < 50 ?  currentHeartBeat-30 : currentHeartBeat+30
+//        buildDataAndSendIt()
     }
 }
 
@@ -109,7 +127,7 @@ extension MainViewController: CLLocationManagerDelegate{
 }
 
 extension MainViewController{
-    private func buildDataAndSendIt(){
+    @objc private func buildDataAndSendIt(){
         var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
         print("he is \(type.rawValue)")
         let personID = 00000000000
@@ -123,6 +141,7 @@ extension MainViewController{
                                                    location: locationData)
         let encoder = JSONEncoder()
         do{
+//            let jsonData = try? JSONSerialization.data(withJSONObject: jsonValues)
             let data = try encoder.encode(jsonValues)
             let networkManager = NetworkManager()
             networkManager.sendPersonData(personData: data)
@@ -158,7 +177,29 @@ extension MainViewController: WebSocketConnectionDelegate{
     }
     
     func onMessage(connection: WebSocketConnection, text: String) {
-        print("Got message")
+//        if (text == "Watch connected"){
+            
+            let  json: [String:String] = ["id":"1","messageType":"TEXT","timeStamp":"1573783202833","from":"rajat","to":"akshay","content":"test message","receiverType":"USER"]
+                do {
+                let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                // here "jsonData" is the dictionary encoded in JSON data
+//                    connection.send(data:jsonData)
+
+                let decoded = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                // here "decoded" is of type `Any`, decoded from JSON data
+                    let jsonString = String(data:jsonData, encoding: .ascii)
+                    connection.send(text: jsonString!)
+                // you can now cast it with the right type
+                    if let dictFromJSON = decoded as? [String:String] {
+//                        connection.send(text: dictFromJSON)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+//        }
+        print("Got message \(text)")
+//        connection.send(text: "ok")
     }
     
     func onMessage(connection: WebSocketConnection, data: Data) {
