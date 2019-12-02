@@ -26,7 +26,7 @@ class MainViewController: WKInterfaceController  {
     var longitude : Double = 0
     var isMoving: Bool = false
     
-    let webSocketURL  = "ws://10.0.0.100:8080/java-websocket/health/"
+    let webSocketURL  = "ws://10.110.74.174:8080/java-websocket/health/"
     let currentUser = "akshay"
     //    "Apple_Watch_User"
     
@@ -113,15 +113,17 @@ class MainViewController: WKInterfaceController  {
     
     @IBAction func dropButton() {
         if (isDropped){
-            if (currentHeartRate+currentHeartBeat < 70){
+            if (currentHeartRate+currentHeartBeat < 50){
                 currentHeartBeat = 0
                 isDropped = false
             }
         }
         else {
-            currentHeartBeat =  -30
+            currentHeartBeat =  -50
             isDropped = true
-            buildDataAndSendIt()
+            if (UserDefaults.standard.string(forKey: groupIDKey) != nil){
+                buildDataAndSendIt()
+            }
         }
         //        currentHeartBeat = currentHeartBeat < 50 ?  currentHeartBeat-30 : currentHeartBeat+30
         //        buildDataAndSendIt()
@@ -166,20 +168,23 @@ extension MainViewController: CLLocationManagerDelegate{
 
 extension MainViewController{
     @objc private func buildDataAndSendIt(){
+        var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
         let groupID = UserDefaults.standard.string(forKey: groupIDKey)
         let currentTimeStamp = getCurrentTimeStampInISOFormat()
         let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
+        isMoving = !isMoving
         let jsonValues = JsonFields.PersonJSONData(id: groupID!,
                                                    timeStamp: currentTimeStamp,
-                                                   heartRate: currentHeartRate,
+                                                   heartRate: currentHeartRate + currentHeartBeat,
                                                    steps: currentStepCount,
                                                    isMoving: isMoving,
-                                                   location: locationData)
+                                                   activityType:Int(type.rawValue),
+                                                   location: locationData )
         let encoder = JSONEncoder()
         do{
             let data = try encoder.encode(jsonValues)
             let networkManager = NetworkManager()
-            networkManager.sendPersonData(personData: data)
+            networkManager.sendPersonData(personData: data, user: currentUser)
         }
         catch{
             print("Error encoding values to JSON")

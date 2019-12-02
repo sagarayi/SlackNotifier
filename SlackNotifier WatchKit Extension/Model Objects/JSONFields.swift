@@ -17,7 +17,7 @@ class JsonFields: NSObject {
         var heartRate: Double
         var steps: Double
         var isMoving: Bool
-//        var activityType:String
+        var activityType:Int
     
         struct coordinate:Codable {
             var lat: Double
