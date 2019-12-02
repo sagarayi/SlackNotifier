@@ -10,7 +10,8 @@ import WatchKit
 
 class NetworkManager: NSObject {
 
-    let serverURL:URL = URL.init(string: "http://13.59.88.20:8090/java-websocket/rest/health/postData")!
+    let serverURL:URL = URL.init(string:"http://10.0.0.100:8080/java-websocket/rest/health/postData")!
+//        "http://13.59.88.20:8090/java-websocket/rest/health/postData")!
     
     func sendPersonData(personData: Data){
         let headers = [

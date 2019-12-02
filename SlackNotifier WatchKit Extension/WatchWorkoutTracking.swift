@@ -12,6 +12,7 @@ import HealthKit
 protocol WorkoutTrackingDelegate: class {
     func didReceiveHealthKitHeartRate(_ heartRate: Double)
     func didReceiveHealthKitStepCounts(_ stepCounts: Double)
+    func gotPermission()
 }
 
 protocol WorkoutTrackingProtocol {
@@ -19,6 +20,7 @@ protocol WorkoutTrackingProtocol {
     func startWorkOut()
     func stopWorkOut()
     func fetchStepCounts()
+
 }
 
 class WorkoutTracking: NSObject {
@@ -110,6 +112,7 @@ extension WorkoutTracking: WorkoutTrackingProtocol {
             HKHealthStore().requestAuthorization(toShare: infoToShare, read: infoToRead) { (success, error) in
                 if success {
                     print("Authorization healthkit success")
+                    WorkoutTracking.shared.delegate?.gotPermission()
                 } else if let error = error {
                     print(error)
                 }

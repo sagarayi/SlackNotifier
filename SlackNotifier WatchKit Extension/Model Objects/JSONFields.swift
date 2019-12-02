@@ -11,7 +11,7 @@ import WatchKit
 class JsonFields: NSObject {
 
     struct PersonJSONData:Codable{
-        var id: Int
+        var id: String
         var timeStamp: String
         
         var heartRate: Double
