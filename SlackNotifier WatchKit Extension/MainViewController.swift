@@ -171,8 +171,8 @@ extension MainViewController{
         var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
         let groupID = UserDefaults.standard.string(forKey: groupIDKey)
         let currentTimeStamp = NSDate().timeIntervalSince1970
-//            getCurrentTimeStampInISOFormat()
-        let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
+        //            getCurrentTimeStampInISOFormat()
+//        let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
         isMoving = !isMoving
         let jsonValues = JsonFields.PersonJSONData(id: groupID!,
                                                    timeStamp: currentTimeStamp,
@@ -180,7 +180,8 @@ extension MainViewController{
                                                    steps: currentStepCount,
                                                    isMoving: isMoving,
                                                    activityType:Int(type.rawValue),
-                                                   location: locationData )
+                                                   lat: lat,
+                                                   long:longitude)
         let encoder = JSONEncoder()
         do{
             let data = try encoder.encode(jsonValues)

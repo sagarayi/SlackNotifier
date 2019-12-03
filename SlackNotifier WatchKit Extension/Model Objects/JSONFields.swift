@@ -9,22 +9,16 @@
 import WatchKit
 
 class JsonFields: NSObject {
-
+    
     struct PersonJSONData:Codable{
         var id: String
         var timeStamp: Double
-        
         var heartRate: Double
         var steps: Double
         var isMoving: Bool
         var activityType:Int
-    
-        struct coordinate:Codable {
-            var lat: Double
-            var long:Double
-        }
-        var location: coordinate
-
+        var lat: Double
+        var long:Double
     }
     
 }
