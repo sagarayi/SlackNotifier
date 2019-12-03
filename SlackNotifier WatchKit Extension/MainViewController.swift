@@ -170,7 +170,8 @@ extension MainViewController{
     @objc private func buildDataAndSendIt(){
         var type = WorkoutTracking.shared.workoutBuilder.workoutConfiguration.activityType
         let groupID = UserDefaults.standard.string(forKey: groupIDKey)
-        let currentTimeStamp = getCurrentTimeStampInISOFormat()
+        let currentTimeStamp = NSDate().timeIntervalSince1970
+//            getCurrentTimeStampInISOFormat()
         let locationData = JsonFields.PersonJSONData.coordinate(lat: lat, long: longitude)
         isMoving = !isMoving
         let jsonValues = JsonFields.PersonJSONData(id: groupID!,

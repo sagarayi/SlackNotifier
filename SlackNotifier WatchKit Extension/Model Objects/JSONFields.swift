@@ -12,7 +12,7 @@ class JsonFields: NSObject {
 
     struct PersonJSONData:Codable{
         var id: String
-        var timeStamp: String
+        var timeStamp: Double
         
         var heartRate: Double
         var steps: Double
